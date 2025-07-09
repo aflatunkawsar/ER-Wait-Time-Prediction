@@ -91,19 +91,10 @@ Future work could include:
 
 ## How to Run This Project
 
-1.  Clone the repository to your local machine:
-    ```bash
-    git clone [https://github.com/your-username/ER-Wait-Time-Prediction.git](https://github.com/your-username/ER-Wait-Time-Prediction.git)
-    ```
-2.  Navigate to the project directory:
-    ```bash
-    cd ER-Wait-Time-Prediction
-    ```
-3.  Install the required Python libraries:
-    ```bash
-    pip install -r requirements.txt
-    ```
-4.  Open and run the Jupyter Notebook in the `notebooks/` directory to see the full analysis:
-    ```bash
-    jupyter notebook notebooks/ER_Wait_Time_Analysis.ipynb
-    ```
+To ensure full reproducibility, the project is structured with clear separation of data and code.
+
+1.  Clone the repository.
+2.  Install the required libraries listed below.
+3.  Execute the Jupyter Notebook in the `/notebooks` directory to review the full analysis.
+
+**Core Libraries:** `Python`, `Pandas`, `Scikit-learn`, `XGBoost`, `Matplotlib`, `Seaborn`.
