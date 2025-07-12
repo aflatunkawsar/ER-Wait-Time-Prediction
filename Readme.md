@@ -8,7 +8,12 @@ As a lecturer in Industrial and Production Engineering, my motivation was to app
 
 ---
 
-## Expanded Feature Set: * **Operational**: `Nurse-to-Patient Ratio`, `Specialist Availability`, `Facility Size (Beds)` * **Geographic**: `Hospital Name`, `Region` * **Temporal**: `Season`, `Time of Day`, `DayOfWeek`, `Month` * **Patient-Specific**: `Urgency Level`
+## Expanded Feature Set: 
+
+**Operational**: `Nurse-to-Patient Ratio`, `Specialist Availability`, `Facility Size (Beds)`
+**Geographic**: `Hospital Name`, `Region`
+**Temporal**: `Season`, `Time of Day`, `DayOfWeek`, `Month`
+**Patient-Specific**: `Urgency Level`
 ---
 
 ## Methodology
