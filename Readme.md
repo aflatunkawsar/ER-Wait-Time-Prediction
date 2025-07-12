@@ -1,4 +1,4 @@
-# ER Wait Time Prediction using Machine Learning  ⏱️
+﻿# ER Wait Time Prediction using Machine Learning  ⏱️
 
 ## Project Overview
 
@@ -8,14 +8,7 @@ As a lecturer in Industrial and Production Engineering, my motivation was to app
 
 ---
 
-## Dataset
-
-The analysis is based on the `ER Wait Time Dataset.csv`. This dataset contains anonymized patient visit records. Key features utilized for modeling include:
-* **Nurse-to-Patient Ratio**: The staffing ratio in the ER.
-* **DayOfWeek**: The day of the week of the patient's visit.
-* **Month**: The month of the visit.
-* **Target Variable**: `Total Wait Time (min)`
-
+## Expanded Feature Set: * **Operational**: `Nurse-to-Patient Ratio`, `Specialist Availability`, `Facility Size (Beds)` * **Geographic**: `Hospital Name`, `Region` * **Temporal**: `Season`, `Time of Day`, `DayOfWeek`, `Month` * **Patient-Specific**: `Urgency Level`
 ---
 
 ## Methodology
@@ -26,7 +19,7 @@ The project followed a systematic data science workflow:
 2.  **Feature Engineering**: Created new time-based features (`DayOfWeek`, `Month`) from timestamps to capture temporal trends.
 3.  **Exploratory Data Analysis (EDA)**: Performed visual analysis using histograms, box plots, and heatmaps to discover underlying patterns and relationships in the data.
 4.  **Modeling**: Developed and compared multiple regression models to identify the most effective algorithm.
-5.  **Hyperparameter Tuning**: Optimized the best-performing model (`XGBoost`) using `RandomizedSearchCV` to further improve its predictive accuracy.
+5.  **Hyperparameter Tuning**: Optimized the best-performing model (`LightGBM`) using `RandomizedSearchCV` to further improve its predictive accuracy.
 
 ---
 
@@ -48,7 +41,7 @@ A multi-stage modeling approach was used to identify the most effective algorith
 
 2. **Advanced Algorithm Evaluation**: More powerful gradient boosting models, XGBoost and LightGBM, were then trained and evaluated. These models are known for their high performance on tabular data and represent a step towards state-of-the-art solutions.
 
-3. **Hyperparameter Tuning**: The best-performing model (XGBoost) was further optimized using RandomizedSearchCV. This automated process systematically searches for the best model configuration, demonstrating a commitment to maximizing performance beyond default settings.
+3. **Hyperparameter Tuning**: The best-performing model (LightGBM) was further optimized using RandomizedSearchCV. This automated process systematically searches for the best model configuration, demonstrating a commitment to maximizing performance beyond default settings.
 
 ---
 
@@ -58,18 +51,18 @@ Multiple models were trained and evaluated on the unseen test set. The `XGBoost`
 
 | Model                   | R-squared (R²) | Mean Absolute Error (MAE) | Root Mean Squared Error (RMSE) |
 | ----------------------- | -------------- | ------------------------- | ------------------------------ |
-| Random Forest (Baseline)| 0.533          | 32.923 minutes            | 46.630 minutes                 |
-| XGBoost (Initial)       | 0.561          | 31.942 minutes            | 45.170 minutes  		|
-| LightGBM (Initial)      | 0.558	   | 31.987 minutes	       | 45.366 minutes			|
-| **XGBoost (Tuned)**     | **0.566**      | **31.596 minutes**        | 44.921 minutes
+| Random Forest (Baseline)| 0.922          | 13.114 minutes            | 19.090 minutes                 |
+| XGBoost (Initial)       | 0.936          | 11.757 minutes            | 17.281 minutes  		|
+| LightGBM (Initial)      | 0.937	   | 11.630 minutes	       | 17.156 minutes			|
+| **LightGBM (Tuned)**    | **0.938**      | **11.587 minutes**        | 16.988 minutes
 
-**Results**: The final tuned `XGBoost` model demonstrated the strongest predictive performance, explaining 56.6% of the variance in wait times with an average error of approximately 31.596 minutes .
+**Results**: The final tuned `LightGBM` model demonstrated the strongest predictive performance, explaining 93.8% of the variance in wait times with an average error of approximately 11.587 minutes .
 
 ---
 
 ## Key Findings
 
-The feature importance analysis of the final model revealed the primary drivers of ER wait times. Factors such as Nurse-to-Patient Ratio and specific DayOfWeek patterns were identified as most influential.
+The feature importance analysis of the final model revealed the primary drivers of ER wait times. Factors such as Urgency Level and specific Time of Day patterns were identified as most influential.
 
 This is a critical insight for hospital administration. It provides empirical evidence that operational decisions, such as staffing schedules and resource allocation on peak days, are the most impactful levers for improving patient flow and reducing wait times.
 
