@@ -13,7 +13,7 @@ As a lecturer in Industrial and Production Engineering, my motivation was to app
 Operational: `Nurse-to-Patient Ratio`, `Specialist Availability`, `Facility Size (Beds)`
 Geographic: `Hospital Name`, `Region`
 Temporal: `Season`, `Time of Day`, `DayOfWeek`, `Month`
-Patient-Specific**: `Urgency Level`
+Patient-Specific: `Urgency Level`
 
 ---
 
